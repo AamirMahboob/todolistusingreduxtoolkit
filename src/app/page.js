@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addTodo} from "./redux/slices/toDoSlice";
+import { addTodo, removeToDo} from "./redux/slices/toDoSlice";
 import { MdDelete } from "react-icons/md";
 
 const Page = () => {
@@ -49,7 +49,7 @@ const Page = () => {
               <span className="truncate">{item.text}</span>
               <MdDelete
                 className="text-red-500 cursor-pointer hover:text-red-700"
-                onClick={() => dispatch(deleteTodo(item.id))}
+                onClick={() => dispatch(removeToDo(item.id))}
               />
             </li>
           ))}
